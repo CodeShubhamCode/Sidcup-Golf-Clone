@@ -1,0 +1,498 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    color: #fff;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+*::selection{
+    background-color: white;
+    color: #95C11E;
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 7px;
+    background: linear-gradient(to right,#95C11E,#000)
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 50px;
+}
+
+#cursor{
+    height: 15px;
+    width: 15px;
+    background-color: #9ccb1d;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 100;
+}
+
+#cursor-blur{
+    height: 300px;
+    width: 300px;
+    background-color: #9dcb1d39;
+    border-radius: 50%;
+    position: fixed;    
+    filter: blur(50px);
+    z-index: 9;
+}
+
+#nav{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 110px;
+    gap: 40px;
+    justify-content: flex-start;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav img{
+    height: 65px;
+}
+
+#nav h4{
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 100px;
+    font-weight: 1000;
+    position: relative;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -3.1px;
+    left: -3.4px;
+    -webkit-text-stroke: 1px #5f8103;
+    z-index: -1;
+}
+
+#page1 h2{
+    font-size: 23px;
+    font-weight: 1800;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}
+
+#page1 p{
+    font-size: 18.5px;
+    font-weight: 350;
+    width: 40%;
+}
+
+#page1 #arrow{
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    border: 2px solid #95C11E;
+    position: absolute;
+    left: -1%;
+    bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+}
+
+#page1 #arrow i{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+#page1 #arrow:hover{
+    scale: 0.4;
+    background-color: #95C11E;
+}
+
+
+#page2 {
+    min-height: 150vh;
+    width: 100%;
+    z-index: 1;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 26s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h4{
+    display: inline-block;
+    font-size: 80px;
+    font-weight: 700;
+    margin-right: 10px;
+    color: transparent;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    -webkit-text-stroke-color: #95C11E; /* Change '1px' to the desired stroke width and '#95C11E' to the desired color */
+    -webkit-text-stroke-width: 1.3px;
+    transition: all linear 0.5s;
+}
+
+#scroller h4:hover{
+    color: #95C11E;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height:40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img{
+    height: 250px;
+    width: 280px;
+    border-radius: 20px;
+    object-fit: cover;
+    
+}
+
+#about-us-in h3{
+    font-size: 45px;
+    font-weight: 1500;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    margin-bottom: 25px;
+}
+
+#about-us-in p{
+    font-size: 15px;
+    line-height: 26px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+#cards-container{
+    /* background-color: red; */
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 50px;
+}
+
+.card{
+    height: 80%;
+    width: 19%;
+    /* background-color: blue; */
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 100px;
+    z-index: 10;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url("Sidcup-Family-Golf.jpg");
+}
+
+#card2{
+    background-image: url("card2.webp");
+}
+
+#card3{
+    background-image: url("Sidcup-Family-Golf.jpg");
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 20px;
+    padding-top: 50px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.overlay h4{
+    color: black;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    margin-bottom: 17px;
+}
+
+.overlay p{
+    color: black;
+    font-size: 17px;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+/* .overlay:hover{
+    opacity: 1;
+} */
+
+#green-div{
+    height: 26vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+    background: linear-gradient(to left bottom, green,#95C11E);
+}
+
+#green-div h4{
+    width: 40%;
+    line-height: 40px;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 10%;
+}
+
+#page3{
+    height: 90vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+#page3>p{
+    font-size: 20px;
+    font-weight: 900;
+    width: 50%;    
+    text-align: center;
+    line-height: 30px;
+}
+
+#page3 img{
+    position: absolute;
+    height: 50px;
+}
+
+#page3 #colon1{
+    left: 20%;
+    top: 30%;
+}
+
+#page3 #colon2{
+    right: 20%;
+    bottom: 35%;
+}
+
+#page4{
+    height: 30vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+}
+
+.elem1{
+    height: 70%;
+    width: 23%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    
+}
+
+.elem1 h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: all ease 0.8s;
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-weight: 700;
+    position: absolute;
+    z-index: 10;
+}
+
+.elem1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.8s;
+    scale: 1.1;
+}
+
+.elem1:hover h2{
+    color: #fff;
+    background-color: transparent;
+}
+
+.elem1:hover img{
+    scale: 1;
+}
+
+#page4 h1{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 81px;
+    position: absolute;
+    text-align: center;
+    font-weight: 700;
+    top: -23%;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
+}
+
+#footer{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to right top, #9ccb1d,rgb(1, 140, 1));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 170px;
+    padding: 0 100px;   
+
+}
+
+#footer>img{
+    position: absolute;
+    height: 100%;
+    object-fit: contain;
+    left: 0;
+    z-index: 0;
+}
+
+#f1 img{
+    height: 100px;
+}
+
+#f1,#f2,#f3,#f4{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+}
+
+#f2 h3{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 23px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 950;
+    margin-bottom: 8px;
+}
+
+#f3 h3{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 20px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+#f4 h4{
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 15px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+
